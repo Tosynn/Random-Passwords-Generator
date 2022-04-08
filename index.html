@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+ 
+    <meta http-equiv="Expires" content="0">
+
+    <meta http-equiv="Cache-Control" content="cache">
+
+    <meta name="copyright" content="© Tosin Adewale">
+
+    <meta name="Author" content="Tosin Adewale">
+
+    <meta name="allow-search" content="yes">
+
+    <meta name="audience" content="all">
+
+    <meta name="resource-type" content="document">
+
+    <meta name="robots" content="all, index, follow">
+
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="Rating" content="General">
+
+    <meta name="Language" content="en">
+
+    <meta name="viewport"  content="width= device-width,initial-scale=1">
+
+    <meta name="Classification" content="Open Source">
+
+    <meta name="keywords" content="Secure Passwords Generator, Generate paswword, secure passwords, passwords generator, fast password generator, generate password fast">
+
+    <meta name="description" content="Generate secure random passwords in 3 seconds with a very straightforward and simple user interface.">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>::Secure Password Generator</title>
+
+    <!-- Favicon -->
+
+    <link rel="icon" type="image/png" href="assets/dist/favicons/favicon.png">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+    
+        <!-- Bootstrap core CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap core Javascript -->
+    <link href="assets/dist/js/bootstrap.bundle.min.js" rel="Javascript">
+    
+    <!-- Custom styles -->
+    <link href="assets/dist/css/styles.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="assets/dist/css/font-awesome/css/font-awesome.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex h-100 text-center text-white bg-dark">
+
+
+    
+<div class="cover-container d-flex w-100 h-80 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0"> <span class="fa fa-lock"></span> Password Generator</h3>
+    </div>
+
+
+  </header>
+
+
+
+  <main class="px-3">
+    <h1>Generate Your Secure Password!</h1>
+    <p class="lead">
+    <input type="text" class="form-control" name="gen-password" placeholder="Password shows here...">
+  </p>
+    <span class="copied fa fa-check fa-2x" style="color:#32CD32" onclick="copy()">Copied</span>
+    <span class="copy fa fa-copy fa-2x" onclick="copy()">Copy</span>
+
+  </p>
+    
+    <p class="lead">
+      <button class="btn btn-lg btn-secondary fw-bold border-white"> <span class="fa fa-key"></span> Generate Password </button>
+
+
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>We got tired of racking our brains for secure passwords.</p>
+    <a href=""><span class="fa fa-github fa-2x" style="color:#FFFFFF"></span></a>
+  </footer>
+</div>
+
+
+     <script>
+         const display = document.querySelector("input"),
+         button = document.querySelector("button"),
+         copyBtn = document.querySelector("span.copy"),
+         copyActive = document.querySelector("span.copied");
+         let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+         button.onclick = ()=>{
+           let i,
+           randomPassword = "";
+           copyBtn.style.display = "block";
+           copyActive.style.display = "none";
+           for (i = 0; i < 18; i++) {
+             randomPassword = randomPassword + chars.charAt(
+               Math.floor(Math.random() * chars.length)
+             );
+           }
+           display.value = randomPassword;
+         }
+         function copy(){
+           copyBtn.style.display = "none";
+           copyActive.style.display = "block";
+           display.select();
+           document.execCommand("copy");
+         }
+
+         
+      </script>
+  </body>
+</html>
