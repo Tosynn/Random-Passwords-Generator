@@ -78,30 +78,38 @@
 
   <main class="px-3">
     <h1>Generate Your Secure Password!</h1>
-    <p class="lead">
-    <input type="text" class="form-control" name="gen-password" placeholder="Password shows here...">
+    <p class="lead">  
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" name="gen-password" placeholder="Password shows here..."> 
   </p>
-    <span class="copied fa fa-check fa-2x" style="color:#32CD32" onclick="copy()">Copied</span>
-    <span class="copy fa fa-copy fa-2x" onclick="copy()">Copy</span>
+    
+    <button class="btn btn-success" type="button">
+      <span class="copy fa fa-copy fa-2x" style="letter-spacing: 4px;" onclick="copy()">&nbsp;Copy</span>
+    </button>
+
+    <span class="copied fa-solid fa-check fa-2x" style="background-color:#198754;letter-spacing: 4px; " onclick="copy()">Copied</span>
+
+  </div>
+  
 
   </p>
     
     <p class="lead">
-      <button class="btn btn-lg btn-secondary fw-bold border-white"> <span class="fa fa-key"></span> Generate Password </button>
-
-
+      <button id="submit" class="btn btn-lg btn-secondary fw-bold border-white"> <span class="fa fa-key"></span> Generate Password </button>
   </main>
+
+ 
 
   <footer class="mt-auto text-white-50">
     <p>We got tired of racking our brains for secure passwords.</p>
-    <a href="https://github.com/Tosynn/Random-Passwords-Generator.html" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+    <a href="https://github.com/Tosynn/Random-Passwords-Generator" target="_blank"><i class="fa-brands fa-github fa-2x" id="github"></i></a>
   </footer>
 </div>
 
 
      <script>
          const display = document.querySelector("input"),
-         button = document.querySelector("button"),
+         button = document.querySelector("#submit"),
          copyBtn = document.querySelector("span.copy"),
          copyActive = document.querySelector("span.copied");
          let chars = "abcdefghijkmnopqrstuvwxyzABCDEFGHIJKMNOPQRSTUVWXYZ0123456789@#$%&";
@@ -120,6 +128,7 @@
          function copy(){
            copyBtn.style.display = "none";
            copyActive.style.display = "block";
+           
            display.select();
            document.execCommand("copy");
          }
